@@ -104,7 +104,7 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 			BMenuFrame a = new BMenuFrame();
 		    a.setVisible(true);
 		} else if (e.getSource()==this.btnsna){
-			SMain b = new SMain();
+			SMenuFrame b = new SMenuFrame();
 		    b.setVisible(true);
 		} else if (e.getSource()==this.btnpon){
 			PMenuFrame c = new PMenuFrame();

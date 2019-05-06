@@ -1,3 +1,4 @@
+import java.applet.AudioClip;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -18,6 +19,7 @@ class PMenuPanel extends JPanel implements ActionListener  {
 					btnExit;
 	
 	private Image fondo;
+	
 
 	
 	public PMenuPanel(){

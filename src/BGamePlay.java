@@ -47,7 +47,7 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 	private BMapGenerator map;
 	
 	BAudio audio = new BAudio();
-    AudioClip rebote = audio.getAudio("/res/rebote.wav");
+    AudioClip fondo = audio.getAudio("/res/AudioBrick.wav");
 	
     private JButton btnexit;
     
@@ -59,6 +59,7 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 		setFocusTraversalKeysEnabled(false);
 		timer = new Timer(delay, this);
 		timer.start();
+		fondo.loop();
 	}
 	
 	public void paint(Graphics g){
@@ -160,12 +161,14 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 				map = new BMapGenerator(3,7);
 			
 				BMenuFrame a = new BMenuFrame();
+				fondo.stop();
 				a.setVisible(true);
 				this.setVisible(false); 
 			}
 		}
 		
 		if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+			fondo.stop();
 			System.exit(1);
 		}
 }

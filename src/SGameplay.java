@@ -1,3 +1,4 @@
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -56,6 +57,8 @@ public class SGameplay extends JPanel implements KeyListener, ActionListener{
 	
 	private ImageIcon titleImage;
 	  
+	SAudio audio = new SAudio();
+    AudioClip fondo = audio.getAudio("res/AudioSnake.wav");
 	
 	
 	public SGameplay() {
@@ -64,10 +67,12 @@ public class SGameplay extends JPanel implements KeyListener, ActionListener{
 		setFocusTraversalKeysEnabled(false);
 		timer = new Timer(delay, this);
 	    timer.start();
-		
+	    fondo.play();
+	    
 	}
 	
 	public void paint(Graphics g) { 
+		
 		if(moves == 0) {
 			snakeXlength[2] = 50;
 			snakeXlength[1] = 75;
@@ -98,7 +103,7 @@ public class SGameplay extends JPanel implements KeyListener, ActionListener{
 		//Dibujar puntuacion
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("arial", Font.PLAIN, 14));
-		g.drawString("Puntuaci�n: " + score, 780, 30);
+		g.drawString("Puntuación: " + score, 780, 30);
 		
 		//Dibujar longitud
 		g.setColor(Color.WHITE);
@@ -249,7 +254,12 @@ public class SGameplay extends JPanel implements KeyListener, ActionListener{
 			moves = 0;
 			score = 0;
 			lengthOfSnake = 3;
+			AMenuPrincipal a = new AMenuPrincipal();
+		    a.setVisible(true);
+		    this.setVisible(false);
+		    fondo.stop();
 			repaint();
+			
 			
 		}
 		
