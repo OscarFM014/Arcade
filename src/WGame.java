@@ -14,7 +14,8 @@ public class WGame extends Canvas implements Runnable {
 	//http://java-white-box.blogspot.com/2013/12/serializar-en-java-serialVersionUID.html
 	
 	
-	public static final int WIDTH = 640, HEIGHT = WIDTH/12 * 9;
+	public static final int WIDTH = 640, 
+							HEIGHT = WIDTH/12 * 9;
 	
 	//HILO
 	private Thread thread;
@@ -69,7 +70,7 @@ public class WGame extends Canvas implements Runnable {
 		this.addKeyListener(new WKeyInput(handler, this));
 		this.addMouseListener(menu);
 		
-		new WWindow(WIDTH, HEIGHT, "CLASSIC ARCADE", this);
+		new WWindow(WIDTH, HEIGHT, "Our Waves", this);
 
 		spawner = new WSpawn(handler, hud, this);
 		

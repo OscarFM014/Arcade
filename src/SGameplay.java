@@ -84,7 +84,7 @@ public class SGameplay extends JPanel implements KeyListener, ActionListener{
 		g.drawRect(24, 10, 851, 55);
 		
 		//Dibujar el titulo
-		titleImage = new ImageIcon("/res/snaketitle.jpg");
+		titleImage = new ImageIcon("imagenes/snaketitle.jpg");
 		titleImage.paintIcon(this, g, 25, 11);
 		
 		//Dibujar borde de jugabilidad
@@ -106,38 +106,38 @@ public class SGameplay extends JPanel implements KeyListener, ActionListener{
 		g.drawString("Longitud: " + lengthOfSnake, 780, 50);
 				
 		
-		rightmouth = new ImageIcon("/res/rightmouth.png");
+		rightmouth = new ImageIcon("imagenes/rightmouth.png");
 		rightmouth.paintIcon(this,  g, snakeXlength[0], snakeYlength[0]);
 		
 		for(int a=0; a < lengthOfSnake; a++) {
 			
 			if(a==0 && right) {
-				rightmouth = new ImageIcon("/res/rightmouth.png");
+				rightmouth = new ImageIcon("imagenes/rightmouth.png");
 				rightmouth.paintIcon(this,  g, snakeXlength[a], snakeYlength[a]);
 			}
 			
 			if(a==0 && left) {
-				leftmouth = new ImageIcon("/res/leftmouth.png");
+				leftmouth = new ImageIcon("imagenes/leftmouth.png");
 				leftmouth.paintIcon(this,  g, snakeXlength[a], snakeYlength[a]);
 			}
 			
 			if(a==0 && down) {
-				downmouth = new ImageIcon("/res/downmouth.png");
+				downmouth = new ImageIcon("imagenes/downmouth.png");
 				downmouth.paintIcon(this,  g, snakeXlength[a], snakeYlength[a]);
 			}
 			
 			if(a==0 && up) {
-				upmouth = new ImageIcon("/res/upmouth.png");
+				upmouth = new ImageIcon("imagenes/upmouth.png");
 				upmouth.paintIcon(this,  g, snakeXlength[a], snakeYlength[a]);
 			}
 			
 			if(a != 0) {
-				snakeimage = new ImageIcon("/res/snakeimage.png");
+				snakeimage = new ImageIcon("imagenes/snakeimage.png");
 				snakeimage.paintIcon(this,  g, snakeXlength[a], snakeYlength[a]);
 			}
 		}
 		
-		enemyimage =  new ImageIcon("/res/enemy.png");
+		enemyimage =  new ImageIcon("imagenes/enemy.png");
 		
 		if((enemyXpos[xPos] == snakeXlength[0]) && enemyYpos[yPos] == snakeYlength[0]) { 
 			score++;

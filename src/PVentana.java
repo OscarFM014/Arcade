@@ -10,7 +10,7 @@ public class PVentana extends JFrame {
 	private PHilo hilo;
 	
 	public PVentana() {
-		setTitle("Pong");
+		setTitle("Our Pong");
 		setSize(ANCHO, ALTO);
 		setLocationRelativeTo(null);
 		setResizable(false);

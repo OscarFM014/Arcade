@@ -23,8 +23,6 @@ public class AMenuPrincipal extends JFrame {
 
 ////CLASS PANEL
 class PanelPrincipal extends JPanel implements ActionListener  {
-
-
 	private JButton btnbr,
 					btnsna,
 					btnpon,
@@ -40,17 +38,19 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 				title,
 				select;
 	
+	
+	
 	public PanelPrincipal(){
 		super();
 		//NEW
 		this.setPreferredSize(new Dimension (1280,  850));
-		this.fondo = new ImageIcon("FondoPrincipal.jpg").getImage();
-		this.breaker = new ImageIcon("Breaker.jpg").getImage();
-		this.pong = new ImageIcon("Pong.jpg").getImage();
-		this.snake = new ImageIcon("Snake.jpg").getImage();
-		this.wave = new ImageIcon("Waves.jpg").getImage();
-		this.title = new ImageIcon("title.png").getImage();
-		this.select = new ImageIcon("select.png").getImage();
+		this.fondo = new ImageIcon("imagenes/FondoPrincipal.jpg").getImage();
+		this.breaker = new ImageIcon("imagenes/Breaker.jpg").getImage();
+		this.pong = new ImageIcon("imagenes/Pong.jpg").getImage();
+		this.snake = new ImageIcon("imagenes/Snake.jpg").getImage();
+		this.wave = new ImageIcon("imagenes/Waves.jpg").getImage();
+		this.title = new ImageIcon("imagenes/title.png").getImage();
+		this.select = new ImageIcon("imagenes/select.png").getImage();
 		
 		this.setLayout(null);
 		this.btnbr = new JButton("Play");
@@ -82,8 +82,8 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(this.fondo, 0, 0, this.getWidth(), this.getHeight(), this);	
-		g.drawImage(this.title, 420, 10, 450, 100, this);
-		g.drawImage(this.select, 520, 100, 200, 40, this);
+		g.drawImage(this.title, 420, 10, 450, 90, this);
+		g.drawImage(this.select, 545, 150, 200, 40, this);
 		
 		g.drawImage(this.breaker, 200, 200, 350, 200, this);
 		
@@ -96,8 +96,20 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 	}
 	
 	public void actionPerformed (ActionEvent e) {
-	
+		if (e.getSource()==this.btnbr) {
+			BMain a = new BMain();
+		    a.setVisible(true);
+		} else if (e.getSource()==this.btnsna){
+			SMain b = new SMain();
+		    b.setVisible(true);
+		} else if (e.getSource()==this.btnpon){
+			PVentana c = new PVentana();
+		    c.setVisible(true);
+		} else if (e.getSource()==this.btnwav){
+			WGame game = new WGame();
+			WWindow d = new WWindow(640, 640/12 * 9, "Our Waves", game);
+		    d.setVisible(true);
+		}
 	}
-
 }
 
