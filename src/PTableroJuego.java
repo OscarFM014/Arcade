@@ -68,17 +68,11 @@ public class PTableroJuego extends JPanel {
 	        if (pelota.getMarcador1() == 5) {
 	            g.drawString("HA GANADO El JUGADOR 1", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
 	            PPelota.finJuego = true;
-	            this.pelota = new PPelota(0,0);
-	        	this.r1 = new PRaqueta(10,200);
-	        	this.r2 = new PRaqueta(794-10-PRaqueta.ANCHO, 200);
 	            
 	        }
 	        if (pelota.getMarcador2() == 5) {
 	            g.drawString("HA GANADO EL JUGADOR 2", (float) getBounds().getCenterX() - 180, (float) getBounds().getCenterY() - 100);
 	            PPelota.finJuego = true;
-	            this.pelota = new PPelota(0,0);
-	        	this.r1 = new PRaqueta(10,200);
-	        	this.r2 = new PRaqueta(794-10-PRaqueta.ANCHO, 200);
 	        	
 	        }
 	    }

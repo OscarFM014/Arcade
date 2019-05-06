@@ -22,7 +22,5 @@ public class PVentana extends JFrame {
 		hilo = new PHilo(lamina); 
 		hilo.start();
 		
-	
-		
 	}
 }

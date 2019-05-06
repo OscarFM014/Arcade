@@ -8,6 +8,7 @@ public class SMain extends JFrame {
 		this.setBounds(10, 10, 905, 700);
 		this.setBackground(Color.DARK_GRAY);
 		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SGameplay gameplay = new SGameplay();
 		this.add(gameplay);

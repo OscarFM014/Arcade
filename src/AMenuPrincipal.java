@@ -90,6 +90,11 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 		g.drawImage(this.snake, 200, 500, 350, 200, this);
 		g.drawImage(this.wave, 750, 500, 350, 200, this);
 		
+		Font fnt3 = new Font("IMPACT", 1, 15);
+		g.setFont(fnt3);
+		g.setColor(Color.white);
+		g.drawString("Linda Nayeli Abundis López  A016136416", 1000, 50);
+		g.drawString("Oscar Fernández Moreno 	  A07013362", 1000, 70);
 		
 		
 	}
@@ -102,7 +107,7 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 			SMain b = new SMain();
 		    b.setVisible(true);
 		} else if (e.getSource()==this.btnpon){
-			PVentana c = new PVentana();
+			PMenuFrame c = new PMenuFrame();
 		    c.setVisible(true);
 		} else if (e.getSource()==this.btnwav){
 			WGame game = new WGame();
