@@ -219,12 +219,16 @@ public class WGame extends Canvas implements Runnable {
 			return var;
 		
 	}
+	
+	public void salir(){
+		AMenuPrincipal a = new AMenuPrincipal();
+		fondo.stop();
+		a.setVisible(true);
+		this.setVisible(false);
+	}
 
 	public static void main(String arg[]){
 		new WGame();
-		
-		
-		
 	}
 
 	

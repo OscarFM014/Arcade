@@ -47,7 +47,7 @@ public class WMenu extends MouseAdapter {
 			
 			//QUIT BUTTON
 			if (mouseOver(mx, my, 210, 350, 200, 64 )){
-				System.exit(1);
+				game.salir();
 			}
 			
 			
