@@ -142,8 +142,12 @@ public class WMenu extends MouseAdapter {
 		}else if (game.gameState == WGame.STATE.Help){
 			g.setColor(Color.WHITE);
 			g.setFont(fnt);
-			g.drawString("Help", 240, 70);
+			g.drawString("Help", 250, 70);
 
+			g.setFont(fnt2);
+			g.drawString("Controls: A, W, D, S", 180, 140);
+			g.drawString("P: Pause", 240, 210);
+			g.drawString("ESC: Exit", 240, 280);
 					
 			g.setFont(fnt2);
 			g.drawRect(210, 350, 200,  64);

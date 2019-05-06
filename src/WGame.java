@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.*;
 
+
 public class WGame extends Canvas implements Runnable {
 	//THE MAIN CLASS
 
@@ -59,7 +60,7 @@ public class WGame extends Canvas implements Runnable {
 	public static STATE gameState = STATE.Menu;
 	
 	WAudio audio = new WAudio();
-    AudioClip fondo = audio.getAudio("/res/fondo.wav");
+	AudioClip fondo = audio.getAudio("/res/AudioFondo.wav");
 	
 	//CONSTRUCTOR
 	public WGame(){
@@ -71,6 +72,7 @@ public class WGame extends Canvas implements Runnable {
 		this.addMouseListener(menu);
 		
 		new WWindow(WIDTH, HEIGHT, "Our Waves", this);
+		fondo.play();
 
 		spawner = new WSpawn(handler, hud, this);
 		
