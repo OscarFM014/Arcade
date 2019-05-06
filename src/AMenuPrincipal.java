@@ -28,7 +28,6 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 					btnpon,
 					btnwav;
 	
-	private JRadioButton rbtn;
 	
 	private Image fondo,
 				breaker,
@@ -97,7 +96,7 @@ class PanelPrincipal extends JPanel implements ActionListener  {
 	
 	public void actionPerformed (ActionEvent e) {
 		if (e.getSource()==this.btnbr) {
-			BMain a = new BMain();
+			BMenuFrame a = new BMenuFrame();
 		    a.setVisible(true);
 		} else if (e.getSource()==this.btnsna){
 			SMain b = new SMain();

@@ -18,6 +18,7 @@ import java.net.URL;
 import java.util.Map;
 
 import javax.swing.Timer;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -48,15 +49,16 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 	BAudio audio = new BAudio();
     AudioClip rebote = audio.getAudio("/res/rebote.wav");
 	
-	
+    private JButton btnexit;
+    
 	public BGamePlay(){
 		map = new BMapGenerator (3,7);
+		
 		addKeyListener(this);
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
 		timer = new Timer(delay, this);
 		timer.start();
-		
 	}
 	
 	public void paint(Graphics g){
@@ -71,6 +73,8 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 		g.fillRect(697,0,3, 600);
 		
 		
+		
+		
 		//SCORE
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("IMPACT", Font.BOLD, 25));
@@ -82,6 +86,8 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 		g.setColor(Color.YELLOW);
 		g.fillOval(ballPosX, ballPosY, 20, 20);
 		
+		
+		
 		if(totalBricks <= 0){
 			play = false;
 			ballXDir = 0;
@@ -92,7 +98,7 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 			g.drawString("Total Points "+ score , 230, 350);
 			
 			g.setFont(new Font("IMPACT", Font.BOLD, 20));
-			g.drawString("Press Enter To Play Again!!"+ score , 230, 400);
+			g.drawString("Press Enter To Play Again!!" , 230, 400);
 		}
 		
 		
@@ -106,8 +112,10 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 			g.drawString("Total Points "+ score , 230, 350);
 			
 			g.setFont(new Font("IMPACT", Font.BOLD, 20));
-			g.drawString("Press Enter To Play Again!!"+ score , 230, 400);
+			g.drawString("Press Enter To Play Again!!" , 230, 400);
 		}
+		
+		
 		
 		g.dispose();
 		
@@ -150,8 +158,15 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 				
 				totalBricks = 21;
 				map = new BMapGenerator(3,7);
-				
+			
+				BMenuFrame a = new BMenuFrame();
+				a.setVisible(true);
+				this.setVisible(false); 
 			}
+		}
+		
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+			System.exit(1);
 		}
 }
 
@@ -171,6 +186,7 @@ public class BGamePlay extends JPanel implements KeyListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		timer.start();
 		
+	
 		
 		if(new Rectangle(ballPosX, ballPosY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))){
 			ballYDir = -ballYDir;

@@ -1,3 +1,11 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class BMain extends JFrame {
@@ -8,12 +16,12 @@ public class BMain extends JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.add(gamePlay);
-		this.setVisible(false);
+		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	public static void main(String[] args) {
-		BMain  amp = new BMain();
+		BMain amp = new BMain();
 		
 	}
 

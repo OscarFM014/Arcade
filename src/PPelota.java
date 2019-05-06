@@ -10,7 +10,8 @@ public class PPelota {
 	private double y;
 	private int dx=1, dy=1;
 	
-	private Integer score1 = 0, score2 = 0;
+	private int score1 = 0, 
+					score2 = 0;
     public static boolean finJuego = false;
     
     PAudio audio = new PAudio();

@@ -48,6 +48,11 @@ public class PEventoTeclado  implements KeyListener  {
 		if(id == KeyEvent.VK_M) {
 			m = false;
 		}
+		if(id == KeyEvent.VK_ENTER) {
+			if(PPelota.finJuego){
+				
+			}
+		}
 	}
 	
 	@Override
